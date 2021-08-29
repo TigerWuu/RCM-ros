@@ -2,22 +2,23 @@
 
 import rospy 
 from std_msgs.msg import Float64MultiArray, String
-from sensor_msgs.msg import Joy
 import numpy as np 
-import kinematics as k
+from robot import RCM
 
 def coordinate_callback(msg):
+	# mm
     tip_coord = msg.data
-    tip_coord = tip_coord.reshape((3,1))
-    theta1 = np.pi
-    theta2 = np.pi
+    tip_coord = np.asarray(tip_coord).reshape((4,1))
+
+    theta1 = 0.25*np.pi
+    theta2 = 0.25*np.pi
     d = 10
-    D = -25.87-d
-    T_WA = k.transformer(k.rotation("z",theta1),k.prismatic(0,0,0))
-    T_AB = k.transformer(np.dot(k.rotation("x",-1/2*np.pi),k.rotation("z",theta2)),k.prismatic(0,0,324))
-    T_BC = k.transformer(k.rotation("y",-1/2*np.pi),k.prismatic(D,0,0))
-    
-    world_coord = k.forward([T_WA,T_AB,T_BC],tip_coord)
+
+	rcm_status = [theta1,theta2,d]
+    rcm = RCM(324,25.87)
+    world_coord = rcm.forward(tip_coord,rcm_status)
+    world_coord = Float64MultiArray(data = world_coord)
+    pub_world_coord.publish(world_coord)
 
 
 if __name__ == '__main__':
