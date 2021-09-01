@@ -1,2 +1,2 @@
-# RCM_ros
+# RCM-ros
 RCM mechanism with gazebo simulation
