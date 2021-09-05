@@ -15,7 +15,7 @@ def joy_remapping(msg):
     A,B,X,Y,LB,RB,back,start,power,BSL,BSR=buttons
 
     # cmd = "%.5f*%.5f*%.5f*%01d" % (UDleft,LRright,UDright,LB)
-    cmd = [-UDleft,LRright,UDright,LB]
+    cmd = [UDleft,LRright,UDright,LB]
     cmd = Float64MultiArray(data = cmd)
     pub_joy.publish(cmd)
 
