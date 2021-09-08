@@ -1,3 +1,6 @@
 [submodule "rcm"]
 	path = rcm
 	url = https://github.com/TigerWuu/rcm.git
+[submodule "joystick_drivers"]
+	path = joystick_drivers
+	url = https://github.com/ros-drivers/joystick_drivers.git
