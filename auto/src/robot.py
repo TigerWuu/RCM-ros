@@ -1,4 +1,17 @@
 #!/usr/bin/env python
+
+""" 
+-------------------------
+Author : Jing-Shiang Wuu
+Date : 2021/9/7
+Institution : National Taiwan University 
+Department : Bio-Mechatronics Engineering
+Status : Senior
+-------------------------
+Description:
+"""
+
+
 import numpy as np 
 
 class RCM():
@@ -9,7 +22,7 @@ class RCM():
 	def forward(self,coord_tip,status):
 		theta1 = status[0]
 		theta2 = status[1] ## be cautios of the up and down angle
-		d = status[2]
+		d = status[2]*1000.0 # m to mm
 
 		R1 = self.rotation("z",theta1)
 		P1 = self.prismatic(0,0,0)
@@ -55,7 +68,7 @@ class RCM():
 		T = np.concatenate((T,np.array([[0,0,0,1]])),axis= 0)
 		return T
 
-	def rotation(self, axis, deg):
+	def rotation(self, axis, deg=0):
 		if axis == "x":
 			R = np.array([[1,          0,           0],
 						  [0,np.cos(deg),-np.sin(deg)],
@@ -67,7 +80,9 @@ class RCM():
 		elif axis == "z":
 			R = np.array([[np.cos(deg),-np.sin(deg),0],
 						  [np.sin(deg), np.cos(deg),0],
-						  [0          , 0          ,1]])
+						  [0          , 0          ,1]])	
+		else:
+			R = np.eye(3)
 		return R
 
 	def prismatic(self, x, y, z):

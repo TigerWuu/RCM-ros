@@ -1,5 +1,16 @@
 #!/usr/bin/env python
 
+""" 
+-------------------------
+Author : Jing-Shiang Wuu
+Date : 2021/9/7
+Institution : National Taiwan University 
+Department : Bio-Mechatronics Engineering
+Status : Senior
+-------------------------
+Description:
+"""
+
 import rospy 
 from std_msgs.msg import Float64MultiArray, String
 from gazebo_msgs.srv import GetJointProperties
@@ -15,7 +26,7 @@ def coordinate_callback(msg):
 		rcm_current_joint_status = rospy.ServiceProxy('/gazebo/get_joint_properties', GetJointProperties)
 		Link1_joint = rcm_current_joint_status("Link1_joint").position[0]
 		Link2_1_joint = rcm_current_joint_status("Link2_1_joint").position[0]
-		Link_E_joint = rcm_current_joint_status("Link_E_joint").position[0]*1000.0 # m to mm
+		Link_E_joint = rcm_current_joint_status("Link_E_joint").position[0]
 	except rospy.ServiceException as e:
 		print(e)
 
