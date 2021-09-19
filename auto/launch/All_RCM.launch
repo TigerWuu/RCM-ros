@@ -2,7 +2,7 @@
 <launch>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-  <arg name="world_name" value="$(find rcm)/world/RCM_target.world"/>
+  <arg name="world_name" value="$(find rcm)/world/RCM.world"/>
   </include>
 
   <node name="transportation" pkg="auto" type="transportation.py" output="screen">  
