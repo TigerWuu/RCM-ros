@@ -3,6 +3,7 @@ RCM mechanism with gazebo simulation
 
 ## Quick Start
   * create ws and source directory
+        
         mkdir -p /RCM_ws/src
       
   * Clone the package into the source directory
@@ -13,6 +14,6 @@ RCM mechanism with gazebo simulation
   
         cd ~/RCM_ws && catkin_make
     
-  * done
+  * launch all
   
         roslaunch auto All.launch
