@@ -13,6 +13,9 @@ RCM mechanism with gazebo simulation
   * build the package
   
         cd ~/RCM_ws && catkin_make
+  * add the environment variable
+
+        source ~/RCM_ws/src/devel/setup.bash
     
   * launch all
   
