@@ -3,7 +3,6 @@ RCM mechanism with gazebo simulation
 
 ## Quick Start
   * create ws and source directory
-
         mkdir -p /RCM_ws/src
       
   * Clone the package into the source directory
