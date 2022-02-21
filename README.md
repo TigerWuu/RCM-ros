@@ -1,6 +1,7 @@
 # RCM-ros
 RCM mechanism with gazebo simulation
-
+## Instlal ROS joystick_driver
+  *
 ## Quick Start
   * create ws and source directory
         
