@@ -1,7 +1,10 @@
 # RCM-ros
 RCM mechanism with gazebo simulation
 ## Instlal ROS joystick_driver
-  *
+  
+        sudo apt-get install ros-melodic-joy
+        sudo apt-get install libspnav-dev libbluetooth-dev libcwiid-dev
+        
 ## Quick Start
   * create ws and source directory
         
