@@ -4,7 +4,13 @@ RCM mechanism with gazebo simulation
   
         sudo apt-get install ros-melodic-joy
         sudo apt-get install libspnav-dev libbluetooth-dev libcwiid-dev
-        
+## Clean the Cmake cache and rebuild
+
+        cd ~{ws}/src/RCM_ros/rcm/rcm/gazebo_plugin/build
+        rm *
+        cmake ..
+        make
+
 ## Quick Start
   * create ws and source directory
         
