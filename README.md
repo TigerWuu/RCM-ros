@@ -7,7 +7,7 @@ RCM mechanism with gazebo simulation
 ## Clean the Cmake cache and rebuild
 
         cd ~{ws}/src/RCM_ros/rcm/rcm/gazebo_plugin/build
-        rm *
+        rm -r *
         cmake ..
         make
 
