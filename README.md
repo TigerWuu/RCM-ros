@@ -18,7 +18,7 @@ RCM mechanism with gazebo simulation
       
   * Clone the package into the source directory
   
-        cd ~/RCM/src && git clone https://github.com/TigerWuu/RCM-ros.git
+        cd ~/RCM/src && git clone --recurse-submodules https://github.com/TigerWuu/RCM-ros.git
       
   * build the package
   
